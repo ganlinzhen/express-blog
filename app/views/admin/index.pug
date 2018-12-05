@@ -1,0 +1,26 @@
+extends ./layout.pug
+
+block content
+  // 修改密码模块
+  #chan.tab-pane.active(role='tabpanel')
+    .check-div
+      | 原始密码为12312313
+    div(style='padding: 50px 0;margin-top: 50px;background-color: #fff; text-align: right;width: 420px;margin: 50px auto;')
+      form.form-horizontal
+        .form-group
+          label.col-xs-4.control-label(for='sKnot') 原密码：
+          .col-xs-5
+            input#sKnot.form-control.input-sm.duiqi(type='', placeholder='', style='margin-top: 7px;')
+        .form-group
+          label.col-xs-4.control-label(for='sKnot') 新密码：
+          .col-xs-5
+            input#sKnot.form-control.input-sm.duiqi(type='', placeholder='', style='margin-top: 7px;')
+        .form-group
+          label.col-xs-4.control-label(for='sKnot') 重复密码：
+          .col-xs-5
+            input#sKnot.form-control.input-sm.duiqi(type='', placeholder='', style='margin-top: 7px;')
+        .form-group.text-right
+          .col-xs-offset-4.col-xs-5(style='margin-left: 100px;')
+            button.btn.btn-xs.btn-white(type='reset') 取 消
+            button.btn.btn-xs.btn-green(type='submit') 保存
+

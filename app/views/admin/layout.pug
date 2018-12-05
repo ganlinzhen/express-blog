@@ -1,0 +1,45 @@
+extends ../layout
+
+append css
+    link(rel='stylesheet', href='/awesome-font/css/font-awesome.css')
+    link(rel='stylesheet', href='/css/admin.css')
+    link(rel='stylesheet', href='/css/styleAdmin.css')
+
+block main
+  #wrap
+    // 左侧菜单栏目块
+    #leftMeun.leftMeun
+      #logoDiv
+        p#logoP
+          span 博客后台系统
+      #personInfor
+        p#userName 甄甘霖
+        p
+          span
+            a 891564843@qq.com
+        p
+          a 退出登录
+      .meun-title #文章管理
+      .meun-item.meun-item-active(href='#sour')
+        a
+          span.fa.fa-home.fa-fw.fa-lg
+          | 文章列表
+      .meun-item(href='#char')
+        a
+          span.fa.fa-home.fa-fw.fa-lg
+          | 添加文章
+      .meun-title #分类管理
+      .meun-item(href='#scho')
+        a
+          span.fa.fa-home.fa-fw.fa-lg
+          | 分类列表
+      .meun-item(href='#scho')
+        a
+          span.fa.fa-home.fa-fw.fa-lg
+          | 添加分类
+    #rightContent
+      a#nimei.toggle-btn
+        i.glyphicon.glyphicon-align-justify
+      // Tab panes
+      .tab-content
+        block content

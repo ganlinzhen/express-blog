@@ -1,0 +1,46 @@
+extends ./layout
+
+block content
+  // start site's main content area
+  main.col-md-8.main-content
+    each post in posts
+      article.post
+        .post-head
+          h1.post-title
+            a(href='')
+              =post.title
+          .post-meta
+            span.author
+              | 作者：
+              a(href='www.baidu.com')
+                =post.author.name
+            time.post-date
+                | 日期：
+                =moment(post.created).format('YYYY-MM-DD')
+        .post-content
+          p
+            =truncate(post.content, 160)
+        .post-permalink
+          a.btn.btn-default(href='/posts/view/' + post._id) 阅读全文
+          span
+            | 分类:&nbsp;
+            =post.category.name
+          span
+            | 评论:&nbsp;
+            =post.comments.length || 0
+          span
+            | 被赞数:&nbsp;
+            =post.meta.favorite || 0
+    // 分页
+    if pageCount > 1
+      nav
+        ul.pagination
+          - var currentPage = 1
+          while currentPage <= pageCount
+            if (currentPage === pageNum)
+              li.active
+                a(href= pathName + '?page=' + currentPage)= currentPage++
+            else
+              li
+                a(href= pathName + '?page=' + currentPage)= currentPage++
+
